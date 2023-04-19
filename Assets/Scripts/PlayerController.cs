@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -10,6 +12,7 @@ public class PlayerController : MonoBehaviour
     //[SerializeField] private Transform[] _enemiesPositions;
     public Transform CurrentTarget;
     public float HP;
+    [SerializeField] GameObject FuckYouText;
 
 
     private void Update()
@@ -21,9 +24,10 @@ public class PlayerController : MonoBehaviour
     
 
 
-     void AttackEnemy(Transform target) 
+    public void AttackEnemy(Transform target) 
     {
-        
+       target.gameObject.SetActive(false);
+        FuckYouText.SetActive(true);
     }
 
 
