@@ -115,6 +115,9 @@ MonoBehaviour:
   EnemyGoal: {fileID: 1938509187483448050, guid: cdcb01478d9350d4593838a4c75f7325, type: 3}
   enemy: {fileID: 7539416143694759095}
   durationToReachGoal: 10
+  speed: 1
+  maxCharge: 2
+  timeToCharge: 0
   Damage: 1
 --- !u!54 &-2097888717511065048
 Rigidbody:

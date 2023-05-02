@@ -747,8 +747,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1423560766}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0103, y: -0, z: -3.2047}
-  m_LocalScale: {x: 1.3399314, y: 1, z: 2.5524008}
+  m_LocalPosition: {x: -0.0103, y: -0, z: 707.9031}
+  m_LocalScale: {x: 1.3399314, y: 1, z: 144.77396}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1099,6 +1099,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6009916541317759148, guid: 1737ef7b2ca7f4d4fa6d0708a6709d65, type: 3}
+      propertyPath: knockbackForce
+      value: -0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6009916541317759159, guid: 1737ef7b2ca7f4d4fa6d0708a6709d65, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1345,7 +1349,7 @@ MonoBehaviour:
   - {fileID: 1974798250}
   - {fileID: 557696857}
   enemyPrefab: {fileID: 7539416143694759094, guid: 7d080e30eb9407442bc1a09c50847cda, type: 3}
-  spawnRate: 2
+  spawnRate: 5
 --- !u!1001 &478296787763709134
 PrefabInstance:
   m_ObjectHideFlags: 0

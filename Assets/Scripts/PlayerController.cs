@@ -9,6 +9,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _speed;
     public float ChargeCooldown;
     [SerializeField] private float _damage;
+
+    [SerializeField] private float knockbackForce;
+
+    
     //[SerializeField] private Transform[] _enemiesPositions;
     public Transform CurrentTarget;
     public int HP;
@@ -23,13 +27,17 @@ public class PlayerController : MonoBehaviour
     
 
 
-    public void AttackEnemy(Transform target) 
+    public void AttackEnemy(Transform target, bool charged)
     {
-       //target.gameObject.SetActive(false);
-       target.gameObject.GetComponent<EnemyController>().Died();
+        if (charged)
+        {
+            target.gameObject.GetComponent<EnemyController>().Knockbacked(knockbackForce * 15);
+        }
+        else
+        {
+            target.gameObject.GetComponent<EnemyController>().Knockbacked(knockbackForce);
+        }
     }
 
-
-
-
+    
 }
