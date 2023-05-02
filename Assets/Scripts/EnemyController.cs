@@ -12,7 +12,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private Transform enemy;
     [SerializeField] private float durationToReachGoal;
     [SerializeField] private float speed = 2;
-    public int Damage;
+    public float Damage;
 
     private void OnMouseOver()
     {

@@ -12,8 +12,10 @@ public class GameManager : MonoBehaviour
   [SerializeField] private GameObject enemyPrefab;
   [SerializeField] private GameObject player;
   [SerializeField] private TextMeshProUGUI HPText;
-  
-  private int HP;
+  [SerializeField] private GameObject healthBar;
+
+  private float HP;
+  private float maxHP;
   private void Awake()
   {
     if (Instance != null && Instance != this) 
@@ -25,15 +27,21 @@ public class GameManager : MonoBehaviour
       Instance = this; 
     }
 
-    HP = player.GetComponent<PlayerController>().HP;
-    HPText.text = "HP: " + HP;
+    maxHP = player.GetComponent<PlayerController>().HP;
+    HP = maxHP;
+    HPText.text = "HP: " + maxHP;
+    healthBar.gameObject.GetComponent<HealthBar>().HealthBarMethod(HP, maxHP);
+
+
+
   }
-  
-  public void Damaged(int damage)
+
+  public void Damaged(float damage)
   {
     HP-= damage;
     Debug.Log("damaged by " + damage + " HP is " + HP + "");
     HPText.text = "HP: " + HP;
+    healthBar.gameObject.GetComponent<HealthBar>().HealthBarMethod(HP, maxHP);
     if (HP <= 0)
     {
       Debug.Log("Game Over");
