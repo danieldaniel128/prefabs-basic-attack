@@ -11,8 +11,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _damage;
     //[SerializeField] private Transform[] _enemiesPositions;
     public Transform CurrentTarget;
-    public float HP;
-    [SerializeField] GameObject FuckYouText;
+    public int HP;
 
 
     private void Update()
@@ -26,8 +25,8 @@ public class PlayerController : MonoBehaviour
 
     public void AttackEnemy(Transform target) 
     {
-       target.gameObject.SetActive(false);
-        FuckYouText.SetActive(true);
+       //target.gameObject.SetActive(false);
+       target.gameObject.GetComponent<EnemyController>().Died();
     }
 
 
