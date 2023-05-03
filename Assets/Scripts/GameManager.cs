@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
   public static GameManager Instance{ get; private set; }
   [SerializeField] private GameObject enemyGoal;
   [SerializeField] private GameObject enemyPrefab;
-  [SerializeField] private GameObject player;
+  public GameObject player;
   [SerializeField] private TextMeshProUGUI HPText;
   [SerializeField] private GameObject healthBar;
 

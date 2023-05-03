@@ -111,12 +111,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48c02f42945070043922ec896c8a8211, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerController: {fileID: 6009916541317759148, guid: 1737ef7b2ca7f4d4fa6d0708a6709d65, type: 3}
+  _playerController: {fileID: 0}
   EnemyGoal: {fileID: 1938509187483448050, guid: cdcb01478d9350d4593838a4c75f7325, type: 3}
   enemy: {fileID: 7539416143694759095}
   durationToReachGoal: 10
   speed: 1
-  maxCharge: 2
+  maxCharge: 4
   timeToCharge: 0
   Damage: 1
 --- !u!54 &-2097888717511065048

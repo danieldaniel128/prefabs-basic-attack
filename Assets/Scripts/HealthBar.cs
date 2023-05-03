@@ -5,15 +5,16 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    private Image healthBar;
+    [SerializeField] private Image healthBar;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        healthBar = GetComponent<Image>();
+        //healthBar = GetComponent<Image>();
     }
     public void HealthBarMethod(float currentHealth, float maxHealth)
     {
         healthBar.fillAmount = currentHealth / maxHealth;
+        Debug.Log("health down");
     }
     // Update is called once per frame
     void Update()

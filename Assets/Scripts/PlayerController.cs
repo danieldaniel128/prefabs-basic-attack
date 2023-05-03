@@ -7,7 +7,9 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float _speed;
-    public float ChargeCooldown;
+    public float MaxCharge;
+    public float ChargeTimer;
+
     [SerializeField] private float _damage;
 
     [SerializeField] private float knockbackForce;
@@ -31,10 +33,12 @@ public class PlayerController : MonoBehaviour
     {
         if (charged)
         {
+            Debug.Log("charged attack: " + knockbackForce);
             target.gameObject.GetComponent<EnemyController>().Knockbacked(knockbackForce * 15);
         }
         else
         {
+            Debug.Log("attack: " + knockbackForce);
             target.gameObject.GetComponent<EnemyController>().Knockbacked(knockbackForce);
         }
     }
