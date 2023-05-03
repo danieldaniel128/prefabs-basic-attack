@@ -43,5 +43,5 @@ public class EnemyManager : MonoBehaviour
             enemySpawnPoints[enemySpawnPointNumber].position.z);
         Instantiate(enemyPrefab,localSpawnPoint,enemySpawnPoints[enemySpawnPointNumber].localRotation );
         // Instantiate(enemyPrefab, enemySpawnPoints[enemySpawnPointNumber] );
-    }
+    }    
 }

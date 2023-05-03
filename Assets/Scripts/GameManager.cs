@@ -13,8 +13,9 @@ public class GameManager : MonoBehaviour
   public GameObject player;
   [SerializeField] private TextMeshProUGUI HPText;
   [SerializeField] private GameObject healthBar;
-
-  private float HP;
+  [SerializeField] private GameObject powBrownEffect;
+  [SerializeField] private GameObject powBlueEffect;
+    private float HP;
   private float maxHP;
   private void Awake()
   {
@@ -48,4 +49,24 @@ public class GameManager : MonoBehaviour
       HPText.text = "HP: " + 0;
     }
   }
+
+    public void ActivateRandomPowEffect()
+    {
+        int randPow= UnityEngine.Random.Range(1, 3);
+        if(randPow == 1)
+            powBrownEffect.SetActive(true);
+        else
+            powBlueEffect.SetActive(true);
+    }
+
+
+    public IEnumerator WaitASecPowEffect()
+    {
+        yield return new WaitForSeconds(1);
+        if(powBrownEffect.activeSelf)
+            powBrownEffect.SetActive(false);
+        if (powBlueEffect.activeSelf)
+            powBlueEffect.SetActive(false);
+    }
+
 }

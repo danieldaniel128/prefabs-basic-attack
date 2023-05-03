@@ -39,8 +39,15 @@ public class EnemyController : MonoBehaviour
             foreach (var lane in _playerController.Lanes) 
             {
                 if(lane.position.x == _playerController.CurrentTarget.position.x)
+                {
                     _playerController.transform.position = new Vector3(lane.position.x, _playerController.transform.position.y, _playerController.transform.position.z);
+                    _playerController.Animator.SetTrigger("IsAttacking");
+                    GameManager.Instance.ActivateRandomPowEffect();
+                    StartCoroutine(GameManager.Instance.WaitASecPowEffect());
+                }
+
             }
+
 
         }
         
