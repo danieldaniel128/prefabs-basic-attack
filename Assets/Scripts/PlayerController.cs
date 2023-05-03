@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private float knockbackForce;
 
+    public Transform[] Lanes;
     
     //[SerializeField] private Transform[] _enemiesPositions;
     public Transform CurrentTarget;

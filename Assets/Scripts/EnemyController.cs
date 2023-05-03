@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -35,6 +36,12 @@ public class EnemyController : MonoBehaviour
         { 
             Debug.Log("<color=red>Pressed on enemy</color>");
             _playerController.AttackEnemy(transform, Charged);
+            foreach (var lane in _playerController.Lanes) 
+            {
+                if(lane.position.x == _playerController.CurrentTarget.position.x)
+                    _playerController.transform.position = new Vector3(lane.position.x, _playerController.transform.position.y, _playerController.transform.position.z);
+            }
+
         }
         
     }
